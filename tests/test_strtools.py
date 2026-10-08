@@ -86,7 +86,6 @@ def test_text_in_last_bracket_group_deeply_nested():
 def test_multi_series_files():
     """Test `text_in_last_bracket_group()` with multiple series files."""
     filename = "ChannelSD - DAPI 20x,SD - GFP 20x,SD - Cy3 20x,SD - Cy5 20x_Seq0002.nd2"
-    assert (
-        text_in_last_bracket_group(f"{filename} [{filename} (series 1)]")
-        == f"{filename} (series 1)"
-    )
+    input = "%s [%s (series 1)]" % (filename, filename)
+    expected = "%s (series 1)" % filename
+    assert text_in_last_bracket_group(input) == expected
