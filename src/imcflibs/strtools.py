@@ -190,6 +190,17 @@ def text_in_last_bracket_group(text):
     str or None
         The content of the last balanced square-bracket group, or None if no
         such group exists.
+
+    Examples
+    --------
+    >>> text_in_last_bracket_group("foo[bar]baz")
+    'bar'
+    >>> text_in_last_bracket_group("foo[bar[baz]qux]")
+    'bar[baz]qux'
+    >>> text_in_last_bracket_group("foo[]bar")
+    ''
+    >>> text_in_last_bracket_group("foobar")
+    None
     """
     depth = 0
     end = None
