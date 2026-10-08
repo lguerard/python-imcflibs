@@ -188,8 +188,8 @@ def text_in_last_bracket_group(text):
     Returns
     -------
     str or None
-        The content of the last balanced square-bracket group, or None if no such
-        group exists
+        The content of the last balanced square-bracket group, or None if no
+        such group exists.
     """
     depth = 0
     end = None
